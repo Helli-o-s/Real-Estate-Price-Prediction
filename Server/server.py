@@ -6,7 +6,7 @@ import util
 app = Flask(__name__)
 
 # Enable CORS for specific origin (Netlify app)
-CORS(app, resources={r"/*": {"origins": "https://melodious-crisp-f69619.netlify.app"}})
+CORS(app, supports_credentials=True)  # Allow all origins temporarily for debugging
 
 @app.route('/get_location', methods=['GET'])
 def get_location_names():
