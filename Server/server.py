@@ -50,6 +50,7 @@ def predict_home_price():
         return jsonify({'error': f"Internal Server Error: {str(e)}"}), 500
 
 if __name__ == "__main__":
-    print("Starting Python server...")
+    print("Starting Python Flask Server For Home Price Prediction...")
     util.load_saved_artifacts()
-    app.run(debug=True)  # Enable debug mode for development
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
